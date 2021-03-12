@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>aktualizuj dane samochodu</title>
+    <style>
+
+        *{
+            font-family: Arial;
+        }
+    </style>
+
+</head>
+<body>
+
+<h1>formularz do aktualizacji danych - nieuzywany</h1>
+<h4>
+    <a href="/"><= formularz do dodawania danych</a>
+</h4>
+<form action="/add" method="get">
+    <input type="text" value="model" name="model"/>
+    <input type="text" value="type" name="type"/>
+    <select name="doors">
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
+    <label>
+        <input type="radio" checked name="country" value="PL"/> polski
+    </label>
+
+    <label>
+        <input type="radio" name="country" value="ENG"/> angielski
+    </label>
+    <input type="submit" value="submit">
+</form>
+
+<p>linki do danych:</p>
+<a href="/text">text</a>
+<a href="/json">json</a>
+<a href="/html">html</a>
+</body>
+</html>

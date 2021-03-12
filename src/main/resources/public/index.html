@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dodaj samochód</title>
+    <style>
+        *{
+            font-family: Arial;
+        }
+        /*a {*/
+        /*    text-decoration: underline;*/
+        /*}*/
+
+        /*form {*/
+        /*    background: #e4e4e4;*/
+        /*    display: block;*/
+        /*    padding: 20px*/
+
+        /*}*/
+
+        /*label, select {*/
+
+        /*    display: block;*/
+        /*    margin: 20px;*/
+        /*}*/
+
+        /*input[type=text] {*/
+        /*    display: block;*/
+        /*    margin: 20px*/
+        /*}*/
+    </style>
+</head>
+<body>
+
+<h1>dodaj dane</h1>
+
+<!--<h4>-->
+<!--    <a href="/update.html">=> aktualizacja danych</a>-->
+<!--</h4>-->
+
+<form action="/add" method="get">
+    <input type="text" value="model" name="model"/>
+
+    <select name="doors">
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
+    <label>
+        <input type="checkbox" checked name="damaged"/>
+    </label>
+    <label>
+        <input type="radio" checked name="country" value="PL"/> polski
+    </label>
+
+    <label>
+        <input type="radio" name="country" value="ENG"/> angielski
+    </label>
+    <input type="submit" value="submit">
+</form>
+
+<p>linki do danych:</p>
+<a href="/text">text</a>
+<a href="/json">json</a>
+<a href="/html">html</a>
+</body>
+</html>
