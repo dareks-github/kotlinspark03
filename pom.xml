@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>groupId</groupId>
-    <artifactId>002_SparkServerREST - KOTLIN</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>spark-app-01</artifactId>
+    <version>1.0</version>
     <dependencies>
         <dependency>
             <groupId>com.sparkjava</groupId>
