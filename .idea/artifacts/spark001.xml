@@ -1,6 +1,10 @@
 <component name="ArtifactManager">
   <artifact type="war" name="spark001">
     <output-path>$PROJECT_DIR$/out/artifacts/spark001</output-path>
-    <root id="archive" name="spark001.war" />
+    <root id="archive" name="spark001.war">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
   </artifact>
 </component>

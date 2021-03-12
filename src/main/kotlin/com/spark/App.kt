@@ -1,3 +1,5 @@
+package com.spark
+
 import com.google.gson.Gson
 import spark.Request
 import spark.Response
@@ -16,14 +18,14 @@ fun main() {
         port(getHerokuAssignedPort())
         staticFiles.location("/public")
         get("/hello") { "Hello Spark Kotlin!" } // ok
-        get("/info") { info(request, response) } //ok
-        get("/add") { add(request, response) } //ok
-        get("/text") { text(request, response) } //ok
-        get("/json") { json(request, response) } //ok
-        get("/html") { html(request, response) } //ok
+        get("/com.spark.info") { info(request, response) } //ok
+        get("/com.spark.add") { add(request, response) } //ok
+        get("/com.spark.text") { text(request, response) } //ok
+        get("/com.spark.json") { json(request, response) } //ok
+        get("/com.spark.html") { html(request, response) } //ok
         get("/deleteall") { deleteAll(request, response) } //ok
-        get("/delete/:id") { delete(request, response) }
-        get("/update/:id") { update(request, response) }
+        get("/com.spark.delete/:id") { delete(request, response) }
+        get("/com.spark.update/:id") { update(request, response) }
 
     }
 
@@ -38,21 +40,22 @@ fun getHerokuAssignedPort(): Int {
 }
 
 fun info(request: Request, res: Response): String {
-    println(res.status());
-    println(request.requestMethod());
-    println(request.attributes());
-    println(request.cookies());
-    println(request.params());
-    println(request.uri());
-    println(request.url());
-    println(request.queryParams());
-    println(request.pathInfo());
-    println(request.contentLength());
-    println(request.contentType());
-    println(request.protocol());
-    println(request.headers());
+    println(res.status())
+    println(request.requestMethod())
+    println(request.attributes())
+    println(request.cookies())
+    println(request.params())
+    println(request.uri())
+    println(request.url())
+    println(request.queryParams())
+    println(request.pathInfo())
+    println(request.contentLength())
+    println(request.contentType())
+    println(request.protocol())
+    println(request.headers())
+    print("a")
     //
-    return "request info";
+    return "request com.spark.info";
 }
 
 //dodanie elementu do listy - ok
@@ -78,7 +81,7 @@ fun add(req: Request, res: Response): String {
 
     list.add(Car(id, model, damaged, doors, country))
 
-    return "car added to list, list size = ${list.size}"
+    return "car added to com.spark.getList, com.spark.getList size = ${list.size}"
 }
 
 //pobranie wszystkich elementów listy i zwrot textu
@@ -88,19 +91,19 @@ fun text(req: Request, res: Response): String {
     return Gson().toJson(list)
 }
 
-//pobranie wszystkich elementów listy i zwrot json-a - ok
+//pobranie wszystkich elementów listy i zwrot com.spark.json-a - ok
 
 fun json(req: Request, res: Response): String {
-    res.type("application/json")
+    res.type("application/com.spark.json")
     return Gson().toJson(list)
 }
 
-//pobranie wszystkich elementów listy i zwrot html-a - ok
+//pobranie wszystkich elementów listy i zwrot com.spark.html-a - ok
 
 fun html(req: Request, res: Response): String {
     res.type("text/html") // typ zwracany strony
     val table = StringBuilder()
-    table.append("<html><head></head><body><table border=1>")
+    table.append("<com.spark.html><head></head><body><table border=1>")
     list.forEach {
         table.append("<tr>")
         table.append("<td>")
@@ -117,9 +120,9 @@ fun html(req: Request, res: Response): String {
         table.append("</td>")
         table.append("</tr>")
     }
-    table.append("</table><body></html>")
+    table.append("</table><body></com.spark.html>")
 
-    // String json = new Gson().toJson(list);
+    // String com.spark.json = new Gson().toJson(com.spark.getList);
     return table.toString()
 }
 
@@ -140,7 +143,7 @@ fun update(req: Request, res: Response): String {
         toupdate[0].damaged = !toupdate[0].damaged
         return "zaktualizowane:  ${req.params(":id")} na $toupdate.damaged"
     } else {
-        return "update - brak samochodu z id = $id"
+        return "com.spark.update - brak samochodu z id = $id"
     }
 
 
@@ -161,7 +164,7 @@ fun delete(req: Request, res: Response): String {
         list.remove(todelete[0])
         return "usuniete: " + req.params(":id")
     } else {
-        return "delete - brak samochodu z id = $id"
+        return "com.spark.delete - brak samochodu z id = $id"
     }
 
 
