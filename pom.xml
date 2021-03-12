@@ -4,7 +4,7 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>groupId</groupId>
+    <groupId>com.apps.dareks</groupId>
     <artifactId>spark-app-01</artifactId>
     <version>1.0</version>
     <dependencies>
@@ -19,6 +19,11 @@
             <version>2.8.6</version>
         </dependency>
     </dependencies>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
 
 
     <build>
