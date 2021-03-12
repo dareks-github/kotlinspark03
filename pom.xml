@@ -22,6 +22,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <main.class>AppKt</main.class>
     </properties>
 
 
@@ -70,7 +71,7 @@
                     <processTypes>
                         <!-- Tell Heroku how to launch your application -->
                         <!-- You might have to remove the ./ in front   -->
-                        <web>java -jar target/my-app-1.0-jar-with-dependencies.jar</web>
+                        <web>java -jar ./target/002_SparkServerREST - KOTLIN-jar-with-dependencies.jar</web>
                     </processTypes>
                 </configuration>
             </plugin>
